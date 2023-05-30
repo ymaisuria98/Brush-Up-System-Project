@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <title>View  All Job Reports - A Brush Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+    <section>
+        <center>
+        <h2 class="content">All Job Reports</h2>
+        <br>
+        </center>
+    </section>
+
+    <section class="report">
+        <center>
+                {% for jobreport in userDetails %}
+            <table class="tableStyle">
+                <thead>
+                <tr>
+                    <th>Job Id</th>
+                    <th>Customer Name</th>
+                    <th>Customer Address</th>
+                     <th>Proposed Cost</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id = "jobidValue"> {{jobreport[0]}} </td>
+                    <td> {{jobreport[2]}} </td>
+                    <td> {{jobreport[3]}} </td>
+                    <td> ${{jobreport[5]}} </td>
+                </tr>
+
+                <tr>
+                    <th colspan = 4 >Job Description</th>
+                </tr>
+
+                <tr>
+                    <td colspan = 4> {{jobreport[4]}} </td>
+                </tr>
+                <tr>
+                    <td style="align-items: center;">
+
+                        <form method = "POST" action = "{{url_for('jobReportInvoice')}}">
+                            <label for="jobid">Confirm Job ID:</label><br>
+                            <input type="text" id="jobid" name="jobid" placeholder="Job ID" required><br><br>
+                            <button class="button" title="View Invoice" type="submit" data-view-component="true;">Create Invoice</button>
+                        </form>
+
+                    </td>
+                </tr>
+                </tbody>
+                <br>
+                </table>
+                {% endfor %}
+
+
+        </center>
+    </section>
+{% endblock %}
+</body>
+</html>

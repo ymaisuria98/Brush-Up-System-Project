@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>New Invoice - A Brush Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<body>
+
+    <section>
+        <center>
+        <h2 class = "content">Create New Invoice</h2>
+        <br>
+        </center>
+    </section>
+
+    <section class="report">
+        <div style="background-color: white; padding-top: 30px; padding-bottom: 30px;">
+        <form method ="POST" action = "{{url_for('invoice')}}">
+            <center>
+
+                <input type="hidden" id="jobid" name="jobid" value="{{jobid}}" ><br>
+                <label style="text-decoration: underline;" for="services">Services Completed:</label><br>
+                <textarea style="margin:10px;" id="services" name="services" rows="10" cols="50"placeholder="Enter Services Completed Here" required></textarea><br><br>
+                <label for="mcost">Cost of Materials:</label><br>
+                <input type="text" id="mcost" name="mcost" placeholder="Cost of Materials" required><br>
+                <label for="lcost">Cost of Labor:</label><br>
+                <input type="text" id="lcost" name="lcost" placeholder="Cost of Labor" required><br><br>
+                <button class="button"title="Create Job Report" type="submit" data-view-component="true">Create Invoice</button>
+            </center>
+        </form>
+        </div>
+    </section>
+</body>
+
+{% endblock %}
+</html>

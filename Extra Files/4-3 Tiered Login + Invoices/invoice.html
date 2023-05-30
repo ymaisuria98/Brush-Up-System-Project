@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <title>New Invoice - A Brush Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<body>
+
+    <section class="header">
+        <h1 class = "header"><center>Create New Invoice</center></h1>
+        <br>
+        <hr>
+    </section>
+
+    <section class="report">
+        <form method ="POST" action = "">
+            <center>
+                <label for="jobid">Job ID:</label><br>
+                <input type="text" id="jobid" name="jobid" placeholder="Job ID" required><br>
+                <label style="text-decoration: underline;" for="services">Services Completed:</label><br>
+                <textarea style="margin:10px;" id="services" name="services" rows="10" cols="50"placeholder="Enter Services Completed Here" required></textarea><br><br>
+                <label for="mcost">Cost of Materials:</label><br>
+                <input type="text" id="mcost" name="mcost" placeholder="Cost of Materials" required><br>
+                <label for="lcost">Cost of Labor:</label><br>
+                <input type="text" id="lcost" name="lcost" placeholder="Cost of Labor" required><br>
+                <label for="tcost">Total Cost:</label><br>
+                <input type="text" id="tcost" name="tcost" placeholder="Total Cost" required><br><br>
+                <button style="color:black;"title="Create Job Report" type="submit" data-view-component="true">Create Job Report</button>
+            </center>
+        </form>
+    </section>
+</body>
+
+{% endblock %}
+</html>

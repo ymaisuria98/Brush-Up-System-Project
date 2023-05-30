@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <title>View Reports - A Brush Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+    </div>
+    <section class="header2">
+        <h2 class = "header2"><center>View Job Reports</center></h2>
+        <br>
+        <hr>
+    </section>
+    <section>
+
+    <form method = "POST" action = "{{ url_for('viewreport') }}">
+            <center>
+                <label for="jobid">Job ID:</label>
+                <input type="text" name="jobid" placeholder="Job ID" id="jobid" required><br>
+                <button style="color:black;"title="View Job Report" type="submit" data-view-component="true" value="View Report" >View Reports</button>
+            </center>
+        </form>
+    </section>
+
+
+
+
+
+
+    <section class="report2">
+        <center>
+            <table border = 10 >
+
+
+
+                {% for jobreport in userDetails %}
+                <tr>
+                    <th>Job Id       </th>
+                    <th>Customer Name</th>
+                    <th>Customer Address</th>
+                     <th>Proposed Cost</th>
+                </tr>
+                <tr>
+                    <td> {{jobreport[0]}} </td>
+                    <td> {{jobreport[1]}} </td>
+                    <td> {{jobreport[2]}} </td>
+                    <td>  $ {{jobreport[4]}} </td>
+                </tr>
+
+                <tr>
+                    <th colspan = 4 >Job Description</th>
+                </tr>
+
+                <tr>
+                    <td colspan = 4> {{jobreport[3]}} </td>
+                </tr>
+                {% endfor %}
+
+                </table>
+        </center>
+    </section>
+{% endblock %}
+</body>
+</html>
+
+
+
+

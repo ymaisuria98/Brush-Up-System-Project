@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+{% extends 'regLayout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+ <section class="header">
+<h2 align = "center" > Input Employee Information</h2>
+
+
+
+        <br>
+
+
+    </section>
+
+
+    <section class="registerForm">
+        <h1>ID: {{ID}}</h1>
+        <form method = "POST" action = "{{ url_for('employeeRegister') }}">
+            <center>
+
+                <label for="ID">ID:</label><br>
+                <input type="text" id="ID" name="ID" placeholder="ID"><br>
+
+
+
+
+
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="First Name" required><br>
+
+                <label for="middle">Middle Initial:</label><br>
+                <input type="text" id="middle" name="middle" placeholder="Middle Initial"><br>
+
+                <label for="lname">Last Name:</label><br>
+                <input type="text" id="lname" name="lname" placeholder="Last Name" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="example@abc.com" required><br>
+                <label for="phone">Phone Number:</label><br>
+
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"placeholder="123-456-7890" required><br>
+                <label for= "jobSelect" >Select your job title:</label><br>
+                <select name="jobSelect" id ="jobSelect">
+                    <optgroup label="Administrative">
+                        <option value = "System Admin/Owner">System Admin/Owner</option>
+                        <option value = "Sr.Painter/Manager">Sr.Painter/Manager</option>
+                    </optgroup>
+                    <optgroup label="Standard">
+                        <option value = "Painter">Painter</option>
+                    </optgroup>
+                </select><br><br><br><br>
+
+                <button style="color:black;"title="Login to Account" type="submit" data-view-component="true" value="Register" >Register Employee</button>
+            </center>
+        </form>
+    </section>
+{% endblock %}
+</body>

@@ -1,0 +1,102 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logo {
+    position:fixed;
+    top:0;
+    left:0;
+    mix-blend-mode: multiply;
+}
+
+body {
+    background-color:beige;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minman(150px, 1fr));
+}
+
+h1 {
+    background-color:aliceblue;
+}
+
+hr {
+    color: black;
+    margin: auto;
+    border-radius:5px;
+}
+
+a:hover {
+    display:inline-block;
+    text-decoration: underline !important;
+}
+
+a:link, a:visited {
+    color:cornflowerblue;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+img {
+    mix-blend-mode: multiply;
+}
+img:hover {
+    transform:scale(1.2);
+}
+
+button {
+    border-color:black;
+    background-color:deepskyblue;
+    padding: 10px 10px;
+    margin: 15px;
+}
+
+button:hover {
+    background-color:dodgerblue;
+    transform:scale(1.1);
+}
+
+table {
+    border: 1px solid #ccc;
+}
+tr {
+    text-align:center;
+    border: 1px solid #ccc;
+}
+
+td {
+    font-weight:lighter;
+    text-align:center;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+th {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.header {
+    background-color:beige;
+    font-size: 60px;
+    font-weight: bolder;
+    margin: auto;
+}
+
+.links {
+    margin: auto;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.registerForm {
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.report {
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+}

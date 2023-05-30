@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<script>
+    function showPassword() {
+        var password = document.getElementById("pword");
+        if (password.style.display === "none") {
+            password.style.display = "block";
+            }
+        else {
+            password.style.display = "none";
+            }
+    }
+</script>
+
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+
+<div>
+    <p>Your account details are below:</p>
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td>{{ account2['first_name'] }}</td>
+            <td>
+                <form method="POST" action="{{url_for('editProfile')}}">
+                    <input type="hidden" id="first_name" name="first_name" value="{{account2['first_name']}}">
+                    <input type="hidden" id="fnuserID" name="fnuserID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Change First Name">
+                </form>
+            </td>
+            {% if first_name == 1 %}
+            <td>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="text" id="newFirstName" name="newFirstName">
+                    <input type="hidden" id="newfnUserID" name="newfnUserID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Update">
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Middle Initial:</td>
+            <td>{{ account2['middle_initial'] }}</td>
+            <td>
+                <form method="POST" action="{{url_for('editProfile')}}">
+                    <input type="hidden" id="middle_initial" name="middle_initial" value="{{account2['middle_initial']}}">
+                    <input type="hidden" id="muserID" name="muserID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Change Middle Initial">
+                </form>
+            </td>
+            {% if middle_initial == 1 %}
+            <td>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="text" id="newMiddleInitial" name="newMiddleInitial">
+                    <input type="hidden" id="newmUserID" name="newmUserID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Update">
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Last Name:</td>
+            <td>{{ account2['last_name'] }}</td>
+            <td>
+                <form method="POST" action="{{url_for('editProfile')}}">
+                    <input type="hidden" id="last_name" name="last_name" value="{{account2['last_name']}}">
+                    <input type="hidden" id="lnuserID" name="lnuserID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Change Last Name">
+                </form>
+            </td>
+            {% if last_name == 1 %}
+            <td>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="text" id="newLastName" name="newLastName">
+                    <input type="hidden" id="newlnUserID" name="newlnUserID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Update">
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Username:</td>
+            <td>{{ account['username'] }}</td>
+            <td>
+                <form method="POST" action="{{url_for('editProfile')}}">
+                    <input type="hidden" id="username" name="username" value="{{account['username']}}">
+                    <input type="hidden" id="userID" name="userID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Change Username">
+                </form>
+            </td>
+            {% if username == 1 %}
+            <td>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="text" id="newUsername" name="newUsername">
+                    <input type="hidden" id="newUserID" name="newUserID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Update">
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+
+
+        <tr>
+            <td>Password:</td>
+            <td id="pword">{{ account['password'] }}</td>
+            <td>
+                <form method="POST" action="{{url_for('editProfile')}}">
+                    <input type="hidden" id="password" name="password" value="{{account['password']}}">
+                    <input type="hidden" id="passwordID" name="passwordID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Change Password">
+                </form>
+            </td>
+            <td>
+                {{incorrectmsg}}
+            </td>
+            {% if password == 1 %}
+            <td>
+                <center>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="text" id="oldPassword" name="oldPassword">
+                    <input type="hidden" id="oldPasswordID" name="oldPasswordID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Confirm Old Password">
+                </form>
+                </center>
+            </td>
+            {% endif %}
+            {% if password == 2 %}
+            <td>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="text" id="newPassword" name="newPassword">
+                    <input type="hidden" id="newPasswordID" name="newPasswordID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Update">
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>{{ account2['email'] }}</td>
+            <td>
+                <form method="POST" action="{{url_for('editProfile')}}">
+                    <input type="hidden" id="email" name="email" value="{{account['email']}}">
+                    <input type="hidden" id="emailID" name="emailID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Change Email">
+                </form>
+            </td>
+            {% if email == 1 %}
+            <td>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="text" id="newEmail" name="newEmail">
+                    <input type="hidden" id="newEmailID" name="newEmailID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Update">
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Phone Number:</td>
+            <td>{{ account2['phone_number'] }}</td>
+            <td>
+                <form method="POST" action="{{url_for('editProfile')}}">
+                    <input type="hidden" id="phone_number" name="phone_number" value="{{account['phone_number']}}">
+                    <input type="hidden" id="phoneID" name="phoneID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Change Phone Number">
+                </form>
+            </td>
+            {% if phone == 1 %}
+            <td>
+                <form method="POST" action="{{url_for('updateProfile')}}">
+                    <input type="tel" id="newPhone" name="newPhone">
+                    <input type="hidden" id="newPhoneID" name="newPhoneID" value="{{account['ID']}}">
+                    <input class="submit" type="submit" value="Update">
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+
+        <tr>
+            <td>Job Title:</td>
+            <td>{{ account2['job_title'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Account ID:</td>
+            <td>{{ account['ID'] }}</td>
+        </tr>
+
+        <tr>
+            <td>
+                <button style="height=20px;"class="button" onclick="showPassword()">Hide/Show Password</button>
+            </td>
+
+        </tr>
+    </table>
+</div>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> View All Invoices</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    </div>
+        <section class="header">
+            <h2 class = "header"><center>View All Invoices</center></h2>
+            <br>
+            <hr>
+        </section>
+
+
+ <section class="report">
+        <center>
+            <table border = 10 >
+
+
+
+                {% for jobInvoice in userDetails %}
+                <tr>
+                    <th>Job Id</th>
+                    <th>Cost of Materials</th>
+                    <th>Cost of Labor</th>
+                    <th>Total Cost</th>
+                </tr>
+                <tr>
+                    <td> {{jobInvoice[1]}} </td>
+                    <td> $ {{jobInvoice[3]}} </td>
+                    <td> $ {{jobInvoice[4]}} </td>
+                    <td> $ {{jobInvoice[5]}} </td>
+                </tr>
+
+                <tr>
+                    <th colspan = 4 >Services</th>
+                </tr>
+
+                <tr>
+                    <td colspan = 4> {{jobInvoice[2]}} </td>
+                </tr>
+                {% endfor %}
+
+                </table>
+        </center>
+    </section>
+{% endblock %}
+
+</body>
+</html>

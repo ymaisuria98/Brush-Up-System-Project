@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Reports</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+{% extends 'layoutAdmin.html' %}
+{% block content %}
+    <br>
+    <center><form method = "POST" action = "{{ url_for('performanceReport') }}">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+        <br><br>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required><br><br>
+        <button class="button"title="View Performance Report" type="submit" data-view-component="true" value="Report" >View Performance Report</button><br>
+        <h2 class="content">{{msg}}</h2>
+    </form></center>
+
+    {% for count in controlLoop %}
+    <section>
+        <center>
+            <br><br>
+            <h2 class="content">Job Reports from {{sDate}} to {{eDate}}</h2>
+            <br>
+
+                {% for performance in listResults %}
+            <table class="tableStyle">
+                <thead>
+                <tr>
+                    <th>Job Id       </th>
+                    <th>Customer Name</th>
+                    <th>Customer Address</th>
+                    <th>Proposed Cost</th>
+                    <th>Materials Cost</th>
+                    <th>Labor Cost</th>
+                    <th>Estimated Date of Completion</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td> {{performance[0]}} </td>
+                    <td> {{performance[2]}} </td>
+                    <td> {{performance[3]}} </td>
+                    <td> ${{performance[5]}} </td>
+                    <td> ${{performance[10]}}</td>
+                    <td> ${{performance[11]}}</td>
+                    <td> {{performance[6]}}</td>
+                </tr>
+
+                <tr>
+                    <th colspan = 7 >Job Description</th>
+                </tr>
+
+                <tr>
+                    <td colspan = 7> {{performance[4]}} </td>
+                </tr>
+
+                <tr>
+                    <th colspan = 7 >Services Completed</th>
+                </tr>
+
+                <tr>
+                    <td colspan = 7> {{performance[9]}} </td>
+                </tr>
+                </tbody>
+                </table>
+                {% endfor %}
+
+                <table class="tableStyle">
+                    <thead>
+                        <tr>
+                            <th>Average Materials Cost</th>
+                            <th>Total Materials Cost</th>
+                            <th>Average Labor Cost</th>
+                            <th>Total Labor Cost</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td style="text-align:center"> ${{averageMaterials}} </td>
+                        <td style="text-align:center"> ${{materialsSum}} </td>
+                        <td style="text-align:center"> ${{averageLabor}} </td>
+                        <td style="text-align:center"> ${{laborSum}} </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+            <br><br>
+        </center>
+    </section>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

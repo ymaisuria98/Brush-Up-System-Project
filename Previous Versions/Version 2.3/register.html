@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+{% extends 'regLayout.html' %}
+-
+{% block title %}Home{% endblock %}
+
+{% block content %}
+ <section class="header">
+<h2 align = "center" > Create Account</h2>
+
+
+        <br>
+
+    </section>
+
+    <section class="registerForm">
+        <form method = "POST" action = "{{ url_for('register') }}">
+            <center>
+                <label for="user">Username:</label><br>
+                <input type="text" id="user" name="user" placeholder="Username" required><br>
+
+                <label for="pword">Password:</label><br>
+                <input type="password" id="pword" name="pword" placeholder="Password" required><br>
+
+                </select><br><br><br><br>
+                <p style="text-decoration:underline;">Security Questions</p>
+                <label for="answer1">Security Question 1:</label><br>
+                <select id="securityQuestions">
+                    <option>What county were you born in?</option>
+                    <option>What was the name of your first pet?</option>
+                </select><br>
+                <input type="text" id="answer1" name="answer1" placeholder="Answer here" required><br><br>
+                <label for="answer2">Security Question 2:</label><br>
+                <select id="securityQuestions2">
+                    <option>What is your mother's maiden name?</option>
+                    <option>What is the make and model of your first car?</option>
+                </select><br>
+                <input type="text" id="answer2" name="answer2" placeholder="Answer here" required><br>
+                <button style="color:black;"title="Login to Account" type="submit" data-view-component="true" value="Register" >Create Account</button>
+            </center>
+        </form>
+    </section>
+{% endblock %}
+</body>

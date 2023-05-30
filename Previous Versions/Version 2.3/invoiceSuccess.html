@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Invoice Success</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+  <section class="header">
+        <h1 class = "header"><center>Invoice  Was Sucessfully created </center></h1>
+        <br>
+        <hr>
+        <h1 class = "header"><center>Go back home to view Job </center></h1>
+
+    <a href="homepage">
+   <button style="color:black;"title="Return to HomePage" type="submit" data-view-component="true" value="Homepage" > Return to Homepage</button>
+    </a>
+  </section>
+
+
+{% endblock %}
+
+
+</body>
+
+</html>

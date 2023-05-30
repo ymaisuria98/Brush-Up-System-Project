@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<script>
+    function showPassword() {
+        var password = document.getElementById("pword");
+        if (password.style.display === "none") {
+            password.style.display = "block";
+            }
+        else {
+            password.style.display = "none";
+            }
+    }
+</script>
+
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+
+<div>
+    <p>Your account details are below:</p>
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td>{{ account2['first_name'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Middle Initial:</td>
+            <td>{{ account2['middle_initial'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Last Name:</td>
+            <td>{{ account2['last_name'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Username:</td>
+            <td>{{ account['username'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+
+            <td id="pword">{{ account['password'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>{{ account2['email'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Phone Number:</td>
+            <td>{{ account2['phone_number'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Job Title:</td>
+            <td>{{ account2['job_title'] }}</td>
+        </tr>
+
+        <tr>
+            <td>Account ID:</td>
+            <td>{{ account['ID'] }}</td>
+        </tr>
+
+    </table>
+    <br>
+    <button style="height=20px;"class="button" onclick="showPassword()">Hide/Show Password</button>
+    <a href="{{url_for('editProfile')}}"><button class="button">Edit Profile</button></a>
+</div>
+{% endblock %}
+
+</body>
+</html>

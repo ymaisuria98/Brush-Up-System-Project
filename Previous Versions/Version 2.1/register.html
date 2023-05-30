@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Register - A Brush Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="logo">
+        <a href="home.html"><img src="C:\Users\antho\Desktop\_College\2023\Spring Semester\Software Engineering\A Brush Up Internal Management System\paintbrush.png" 
+            alt="Logo" style="width:70px;height:70px;"></a>
+    </div>
+    <section class="header">
+        <h1 class = "header"><center>Create Account</center></h1>
+        <br>
+        <hr>
+    </section>
+
+    <section class="registerForm">
+        <form>
+            <center>
+                <label for="user">Username:</label><br>
+                <input type="text" id="user" name="user" placeholder="Username" required><br>
+                <label for="pword">Password:</label><br>
+                <input type="password" id="pword" name="pword" placeholder="Password" required><br>
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="First Name" required><br>
+                <label for="middle">Middle Initial:</label><br>
+                <input type="text" id="middle" name="middle" placeholder="Middle Initial"><br>
+                <label for="lname">Last Name:</label><br>
+                <input type="text" id="lname" name="lname" placeholder="Last Name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="example@abc.com" required><br>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"placeholder="123-456-7890" required><br>
+                <label for="jobSelect">Select your job title:</label><br>
+                <select id="jobSelect">
+                    <optgroup label="Administrative">
+                        <option>System Admin/Owner</option>
+                        <option>Sr.Painter/Manager</option>
+                    </optgroup>
+                    <optgroup label="Standard">
+                        <option>Painter</option>
+                    </optgroup>
+                </select><br><br><br><br>
+                <p style="text-decoration:underline;">Security Questions</p>
+                <label for="answer1">Security Question 1:</label><br>
+                <select id="securityQuestions">
+                    <option>What county were you born in?</option>
+                    <option>What was the name of your first pet?</option>
+                </select><br>
+                <input type="text" id="answer1" name="answer1" placeholder="Answer here" required><br><br>
+                <label for="answer2">Security Question 2:</label><br>
+                <select id="securityQuestions2">
+                    <option>What is your mother's maiden name?</option>
+                    <option>What is the make and model of your first car?</option>
+                </select><br>
+                <input type="text" id="answer2" name="answer2" placeholder="Answer here" required><br>
+                <button style="color:black;"title="Login to Account" type="submit" data-view-component="true">Create Account</button>
+            </center>
+        </form>
+    </section>
+</body>

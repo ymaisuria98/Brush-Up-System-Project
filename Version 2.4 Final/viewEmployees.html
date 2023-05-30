@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Employees</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% extends 'layoutAdmin.html' %}
+{% block content %}
+
+<section>
+        <center>
+            <br>
+            <h2 class="content">All Employees</h2>
+            <br>
+            <table class="tableStyle">
+                {% for employees in employeeDetails %}
+                <thead>
+                <tr>
+                    <th style="text-decoration: underline"colspan = 4>{{employees[2]}} {{employees[3]}} {{employees[4]}}</th>
+                </tr>
+                </thead>
+                <thead>
+                <tr>
+                    <th>Employee's User Id</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Job Title</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td> {{employees[1]}} </td>
+                    <td> {{employees[5]}} </td>
+                    <td> {{employees[6]}} </td>
+                    <td> {{employees[7]}} </td>
+                </tr>
+                </tbody>
+
+                {% endfor %}
+                </table>
+        </center>
+</section>
+{% endblock %}
+</body>
+</html>

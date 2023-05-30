@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <title>New Job Report - A Brush Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<body>
+
+    <section class="header">
+        <h1 class = "header"><center>Create New Job Report</center></h1>
+        <br>
+        <hr>
+    </section>
+
+    <section class="report">
+        <form method ="POST" action = "">
+            <center>
+                <label for="custName">Customer Name:</label><br>
+                <input type="text" id="custName" name="custName" placeholder="Customer Name" required><br>
+                <label for="address">Customer Address:</label><br>
+                <input type="text" id="address" name="address" placeholder="Customer Address" required><br><br>
+                <label style="text-decoration: underline;" for="jobDesc">Job Description</label><br>
+                <textarea style="margin:10px;" id="jobDesc" name="jobDesc" rows="10" cols="50"placeholder="Enter job description here" required></textarea><br><br>
+
+                <label for="address">Proposed Cost:</label><br>
+                <input type="text" id="pcost" name="pcost" placeholder="Proposed Cost" required><br><br>
+
+                <label for="date">Estimated Date of Completion:</label>
+                <input type="date" id="compDate" name="compDate" required><br><br>
+                <button style="color:black;"title="Create Job Report" type="submit" data-view-component="true">Create Job Report</button>
+            </center>
+        </form>
+    </section>
+</body>
+
+{% endblock %}
+</html>

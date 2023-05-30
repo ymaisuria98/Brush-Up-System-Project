@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Report Success</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+  <section>
+      <center>
+        <h2 class = "content">Job  Was Sucessfully created </h2>
+        <br>
+      </center>
+
+    <center><a href="{{ url_for('home') }}">
+   <button class="button" title="Return to HomePage" type="submit" data-view-component="true" value="Homepage" > Return to Homepage</button>
+    </a>
+      </center>
+  </section>
+
+
+{% endblock %}
+
+
+</body>
+
+</html>

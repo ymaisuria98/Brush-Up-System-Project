@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile Success</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% extends 'layout.html' %}
+    {% block content %}
+    <center>
+        <h2 class="content">{{fn}}</h2>
+        <h2 class="content">{{mi}}</h2>
+        <h2 class="content">{{ln}}</h2>
+        <h2 class="content">{{userMsg}}</h2>
+        <h2 class="content">{{emailMsg}}</h2>
+        <h2 class="content">{{phoneMsg}}</h2>
+        <h2 class="content">{{passwordMsg}}</h2>
+    </center>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Invoice Success</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+  <div id="logo">
+        <a href="{{ url_for('home') }}"><img src="C:\Users\antho\Desktop\_College\2023\Spring Semester\Software Engineering\A Brush Up Internal Management System\paintbrush.png"
+            alt="Logo" style="width:70px;height:70px;"></a>
+   </div>
+
+  <section class="header">
+        <h1 class = "header"><center>Invoice  Was Sucessfully created </center></h1>
+        <br>
+        <hr>
+        <h1 class = "header"><center>Go back home to view Job </center></h1>
+
+    <a href="homepage">
+   <button style="color:black;"title="Return to HomePage" type="submit" data-view-component="true" value="Homepage" > Return to Homepage</button>
+    </a>
+  </section>
+
+
+{% endblock %}
+
+
+</body>
+
+</html>

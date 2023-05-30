@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <title>View Invoice - A Brush Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+    </div>
+    <section class="header">
+        <h2 class = "header"><center>View Invoice</center></h2>
+        <br>
+        <hr>
+    </section>
+
+    <section>
+        <form method = "POST" action = "{{ url_for('viewInvoice') }}">
+            <center>
+                <label for="jobid">Job ID:</label>
+                <input type="text" name="jobid" placeholder="Job ID" id="jobid" required><br>
+                <button style="color:black;"title="View Invoice" type="submit" data-view-component="true" value="View Invoice" >View Invoice</button>
+            </center>
+        </form>
+
+    </section>
+
+    <section class="report">
+        <center>
+            <table border = 10 >
+
+
+
+                {% for jobInvoice in userDetails %}
+                <tr>
+                    <th>Job Id</th>
+                    <th>Cost of Materials</th>
+                    <th>Cost of Labor</th>
+                    <th>Total Cost</th>
+                </tr>
+                <tr>
+                    <td> {{jobInvoice[1]}} </td>
+                    <td> $ {{jobInvoice[3]}} </td>
+                    <td> $ {{jobInvoice[4]}} </td>
+                    <td> $ {{jobInvoice[5]}} </td>
+                </tr>
+
+                <tr>
+                    <th colspan = 4 >Services</th>
+                </tr>
+
+                <tr>
+                    <td colspan = 4> {{jobInvoice[2]}} </td>
+                </tr>
+                {% endfor %}
+
+                </table>
+        </center>
+    </section>
+{% endblock %}
+</body>
+</html>

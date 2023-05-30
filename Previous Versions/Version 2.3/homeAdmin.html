@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% extends 'layoutAdmin.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page for Admin</h2>
+<p>Welcome back, {{ username }}!</p>
+
+<div>
+ <center><h5><a href=" {{ url_for('jobreport')}}">Create New Job Report</a></h5></center>
+</div>
+<div>
+     <center><h5><a href=" {{ url_for('viewalljobreport')}}">View  All Job Report</a></h5></center>
+</div>
+<div>
+     <center><h5><a href=" {{ url_for('viewreport')}}">Search Job Report</a></h5></center>
+</div>
+
+<div>
+    <center><h5><a href=" {{ url_for('invoice')}}">Create New Invoice</a></h5></center>
+</div>
+    <div>
+     <center><h5><a href=" {{ url_for('viewallinvoice')}}"> View All Invoice</a></h5></center>
+</div>
+<div>
+     <center><h5><a href=" {{ url_for('viewInvoice')}}"> Search Invoice</a></h5></center>
+</div>
+
+
+<a href="profile">
+   <button style="color:black;"title="Return to Login" type="submit" data-view-component="true" value="Register" > Return to Login</button>
+</a>
+
+
+{% endblock %}
+
+</body>
+</html>

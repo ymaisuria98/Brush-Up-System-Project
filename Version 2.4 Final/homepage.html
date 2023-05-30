@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page for User</h2>
+<p>Welcome back, {{ username }}!</p>
+<div style="background-color: white;">
+<h2 style="text-align: center;"><img style="height: 40px; width:40px;"src="static/report.png">Job Report & Invoice Tools</h2><br>
+        <a class="hometag" href=" {{ url_for('jobreport')}}">
+        <div class="box divzoom">
+            <div class="centerText">
+                Create New Job Report
+            </div>
+        </div>
+        </a>
+
+        <a class="hometag" href=" {{ url_for('viewalljobreport')}}">
+        <div class="box divzoom">
+            <div class="centerText">
+                View  All Job Reports
+            </div>
+        </div>
+        </a>
+
+        <a class="hometag" href=" {{ url_for('viewreport')}}">
+        <div class="box divzoom">
+            <div class="centerText">
+                Search Job Reports
+            </div>
+        </div>
+        </a>
+
+
+
+        <a class="hometag" href=" {{ url_for('viewallinvoice')}}">
+            <div class="box divzoom">
+                <div class="centerText">
+                    View All Invoices
+                </div>
+            </div>
+        </a>
+
+        <a class="hometag" href=" {{ url_for('viewInvoice')}}">
+        <div class="box divzoom">
+            <div class="centerText">
+                Search Invoices
+            </div>
+        </div>
+        </a>
+</div>
+
+
+{% endblock %}
+
+</body>
+</html>

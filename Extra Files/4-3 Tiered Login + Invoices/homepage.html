@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homepage</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p>Welcome back, {{ username }}!</p>
+
+<div>
+ <center><h5><a href=" {{ url_for('jobreport')}}">Create New Job Report</a></h5></center>
+</div>
+<div>
+     <center><h5><a href=" {{ url_for('viewreport')}}">View Job Report</a></h5></center>
+</div>
+<div>
+     <center><h5><a href=" {{ url_for('invoice')}}">Create New Invoice</a></h5></center>
+</div>
+<div>
+     <center><h5><a href=" {{ url_for('viewInvoice')}}">View Invoice</a></h5></center>
+</div>
+
+
+<a href="profile">
+   <button style="color:black;"title="Return to Login" type="submit" data-view-component="true" value="Register" > Return to Login</button>
+</a>
+
+
+{% endblock %}
+
+</body>
+</html>
